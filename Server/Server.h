@@ -25,8 +25,6 @@ private:
     void bindSocket();
 
 
-
-
 public:
 
     void listenAndAccept();
@@ -41,6 +39,7 @@ public:
         close(server);
     };
 };
+
 
 
 #endif //P2P_TERMINAL_CHAT_SERVER_H
