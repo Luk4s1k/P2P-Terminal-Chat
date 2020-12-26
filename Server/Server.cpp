@@ -1,6 +1,6 @@
 #include "Server.h"
 
-int Server::bindSocket() {
+void Server::bindSocket() {
     server = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
     if (server == -1) {
         std::cerr << "Error while creating socket." << std::endl << std::strerror(errno) << std::endl;
