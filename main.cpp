@@ -1,8 +1,7 @@
-//
-// Created by pogotsky on 24.12.2020.
-//
+
+#include "Client/Client.h"
 
 int main(){
-    //First try
+    Client client;
 }
 
