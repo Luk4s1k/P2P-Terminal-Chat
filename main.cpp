@@ -13,9 +13,11 @@ void startClient() {
 
 int main() {
 
-
+    //Open two threads for Server and Client to work parallel
     thread serverThread(startServer);
     thread clientThread(startClient);
+
+    //Join threads if joinable()
     if (serverThread.joinable()) {
         serverThread.join();
         cout << "SERVER - STOPPED" << endl;

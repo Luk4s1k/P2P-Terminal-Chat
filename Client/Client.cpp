@@ -15,7 +15,7 @@ void Client::connectToServer(const char *serverIP, int port) {
     addr.sin_port = htons(SERVERPORT);
 
     if (connect(serverSocket, (struct sockaddr *) &addr, sizeof(addr)) == 0) {
-        cout << "Sucessful connection to server " << serverIP << endl;
+        cout << "Successful connection to server " << serverIP << endl;
     } else {
         cout << "Connection refused! " << endl;
     }

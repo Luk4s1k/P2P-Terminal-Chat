@@ -27,16 +27,10 @@ private:
 
 public:
 
-    int listenAndAccept();
+    void listenAndAccept();
 
-    Server()
-            : addrLength(sizeof(address)) {
-        bindSocket();
-    }
-
-    ~Server() {
-        close(server);
-    };
+    Server();
+    ~Server();
 };
 
 
