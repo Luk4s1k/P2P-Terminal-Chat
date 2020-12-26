@@ -3,7 +3,7 @@
 // Created by Luka Mitrović on 25/12/2020.
 //
 #include "Client.h"
-#include <iostream>
+
 
 
 Client::Client (){
@@ -29,9 +29,13 @@ void Client::connectToServer(const char *serverIP, int port){
 
     }
 void Client::sendMessage(string buffer) {
+
     write(serverSocket, buffer.c_str() , sizeof(buffer));   // converts string buffer into char array
     cout << "Message was sent!" << endl;
     char valread[1025] = {0};                               // receiving value from server
     read(serverSocket, valread, sizeof (valread));
     cout << valread << endl;
 }
+
+
+

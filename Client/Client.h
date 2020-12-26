@@ -13,6 +13,8 @@
 #include <netdb.h>
 #include <map>
 #include <string>
+#include <iostream>
+
 
 
 #define SERVERIP "156.17.224.165"
@@ -27,7 +29,8 @@ public:
     Client();
     void connectToServer(const char *serverIP, int port );
     void sendMessage(string buffer);
-
+    char * encodeMessage(string message);
+    string decodeMessage(string message);
 
 };
 
