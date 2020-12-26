@@ -16,7 +16,7 @@ void Server::bindSocket() {
     }
 }
 
-void Server::listenAndAccept() {
+int Server::listenAndAccept() {
 
     listen(server, 0);
     client = accept(server, (struct sockaddr *) nullptr, nullptr);
@@ -28,4 +28,7 @@ void Server::listenAndAccept() {
     read(client, buffer, sizeof(buffer));
     std::cout << buffer << std::endl;
     write(client, "Received", sizeof("Received"));
+
+    close(server);
+    return 0;
 }

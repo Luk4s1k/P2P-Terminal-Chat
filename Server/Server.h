@@ -27,19 +27,17 @@ private:
 
 public:
 
-    void listenAndAccept();
+    int listenAndAccept();
 
     Server()
-    :addrLength(sizeof(address)){
+            : addrLength(sizeof(address)) {
         bindSocket();
-        listenAndAccept();
     }
 
     ~Server() {
         close(server);
     };
 };
-
 
 
 #endif //P2P_TERMINAL_CHAT_SERVER_H
