@@ -1,3 +1,5 @@
+#include "Server.h"
+
 void Server::bindSocket() {
     server = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
     if (server == -1) {
