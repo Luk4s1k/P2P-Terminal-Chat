@@ -7,9 +7,9 @@
 
 
 Client::Client (){
-    char buffer[1024] = "Hello from client";
+    string buffer = "Hello from client";
     connectToServer(SERVERIP,SERVERPORT);
-    sendMessage(serverSocket, buffer);
+    sendMessage(buffer);
 }
 
 void Client::connectToServer(const char *serverIP, int port){
@@ -28,10 +28,10 @@ void Client::connectToServer(const char *serverIP, int port){
 
 
     }
-void Client::sendMessage(int serverSocket, char *buffer) {
-    send(serverSocket, buffer , sizeof(buffer),0);
+void Client::sendMessage(string buffer) {
+    write(serverSocket, buffer.c_str() , sizeof(buffer));   // converts string buffer into char array
     cout << "Message was sent!" << endl;
-    buffer = {""};
-    recv(serverSocket, buffer, sizeof (buffer),0);
-    cout << buffer << endl;
+    char valread[1025] = {0};                               // receiving value from server
+    read(serverSocket, valread, sizeof (valread));
+    cout << valread << endl;
 }

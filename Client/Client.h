@@ -9,6 +9,7 @@
 #include <sys/types.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>
+#include <unistd.h>
 #include <netdb.h>
 #include <map>
 #include <string>
@@ -25,7 +26,7 @@ class Client {
 public:
     Client();
     void connectToServer(const char *serverIP, int port );
-    void sendMessage(int serverSocket, char *buffer);
+    void sendMessage(string buffer);
 
 
 };
