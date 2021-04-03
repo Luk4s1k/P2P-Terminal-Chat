@@ -13,17 +13,18 @@
 
 #define SERVERIP "156.17.224.165"
 #define SERVERPORT 8083
-using namespace std;
 
 class Client {
     int serverSocket;
     struct sockaddr_in addr;
+    std::string userName;
+    std::string message;
 
 public:
     Client();
     ~Client();
     void connectToServer(const char *serverIP, int port );
-    void sendMessage(string &buffer);
+    void sendMessage();
 };
 
 

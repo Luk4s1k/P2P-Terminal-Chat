@@ -20,6 +20,7 @@ private:
     int addrLength;
     char buffer[1024];
     struct sockaddr_in address;
+    std::string userName;
 
     void bindSocket();
 

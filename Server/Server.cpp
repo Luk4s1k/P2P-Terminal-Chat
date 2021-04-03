@@ -1,11 +1,12 @@
 #include "Server.h"
 Server::Server()
-        : addrLength(sizeof(address)) {
+        : addrLength(sizeof(address)), userName("Server") {
     bindSocket();
 }
 
 Server::~Server() {
     close(server);
+    std::cout << "SERVER - STOPPED" << std::endl;
 }
 
 void Server::bindSocket() {
