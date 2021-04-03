@@ -21,10 +21,9 @@ class Client {
 
 public:
     Client();
+    ~Client();
     void connectToServer(const char *serverIP, int port );
-    void sendMessage(string buffer);
-
-
+    void sendMessage(string &buffer);
 };
 
 

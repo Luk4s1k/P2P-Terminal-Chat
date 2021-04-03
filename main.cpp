@@ -11,7 +11,7 @@ void startClient() {
     Client client;
 }
 
-int main() {
+int main(int argc, char *argv[]) {
 
     //Open two threads for Server and Client to work parallel
     thread serverThread(startServer);
@@ -29,4 +29,3 @@ int main() {
 
     return 0;
 }
-

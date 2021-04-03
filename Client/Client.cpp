@@ -2,9 +2,13 @@
 #include <iostream>
 
 Client::Client() {
-    string buffer = "Hello from client(Matvey)";
+    string buffer = "Hello from client";
     connectToServer(SERVERIP, SERVERPORT);
     sendMessage(buffer);
+}
+
+Client::~Client() {
+    close(serverSocket);
 }
 
 void Client::connectToServer(const char *serverIP, int port) {
@@ -20,13 +24,14 @@ void Client::connectToServer(const char *serverIP, int port) {
         cout << "Connection refused! " << endl;
     }
 
-
 }
 
-void Client::sendMessage(string buffer) {
-    write(serverSocket, buffer.c_str(), sizeof(buffer));   // converts string buffer into char array
+void Client::sendMessage(string &buffer) {
+    // converts string buffer into char array & sending
+    write(serverSocket, buffer.c_str(), sizeof(buffer));
     cout << "Message was sent!" << endl;
-    char valread[1025] = {0};                               // receiving value from server
+    // receiving value from server
+    char valread[1025] = {0};
     read(serverSocket, valread, sizeof(valread));
     cout << valread << endl;
 }

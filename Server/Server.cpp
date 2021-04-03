@@ -27,7 +27,6 @@ void Server::bindSocket() {
 }
 
 void Server::listenAndAccept() {
-
     listen(server, 0);
     client = accept(server, (struct sockaddr *) nullptr, nullptr);
     //If error occurs (accept will return -1), printing error message & exit program;
@@ -42,6 +41,4 @@ void Server::listenAndAccept() {
     std::cout << buffer << std::endl;
     //Sends a confirmation of receipt of the message to the client;
     write(client, "Received", sizeof("Received"));
-
 }
-

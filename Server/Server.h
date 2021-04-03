@@ -11,7 +11,7 @@
 #include <sys/socket.h>
 #include <cstring>
 
-#define PORT 8823
+#define PORT 8813
 
 class Server {
 private:
@@ -19,18 +19,14 @@ private:
     int client;
     int addrLength;
     char buffer[1024];
-
     struct sockaddr_in address;
 
     void bindSocket();
 
-
 public:
-
-    void listenAndAccept();
-
     Server();
     ~Server();
+    void listenAndAccept();
 };
 
 
